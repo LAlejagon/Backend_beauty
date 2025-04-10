@@ -9,7 +9,7 @@ const app = express();
 const corsOptions = {
   origin: [
     'http://localhost:3000',
-    'https://tudominio.com',
+
     
   ],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',

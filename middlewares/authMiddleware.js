@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
-  // Obtener el token del header
   const token = req.header('Authorization')?.replace('Bearer ', '');
   
   if (!token) {
@@ -9,7 +8,7 @@ module.exports = (req, res, next) => {
   }
   
   try {
-    // Verificar el token
+    // Verificacion el token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded.user;
     next();
